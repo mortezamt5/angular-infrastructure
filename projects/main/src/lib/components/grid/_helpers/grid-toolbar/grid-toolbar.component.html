@@ -1,0 +1,10 @@
+<button class="grid-action-menu" mat-icon-button #actionMenuTrigger="matMenuTrigger"
+  [matMenuTriggerFor]="actionMenu">
+  <i class="fa-solid fa-ellipsis-v icon"></i>
+</button>
+<mat-menu #actionMenu="matMenu" class="grid-toolbar-action-menu-panel">
+  <button mat-menu-item (click)="handleReset()">
+    <i class="fa-solid fa-rotate-90 icon"></i>
+    Reset Data
+  </button>
+</mat-menu>

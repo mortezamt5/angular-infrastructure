@@ -1,0 +1,12 @@
+<mat-accordion class="mcb-form-group">
+    <mat-expansion-panel [hideToggle]="hideToggleSign" [expanded]="expanded"
+                         class="mcb-form-group-item">
+            <mat-expansion-panel-header class="mcb-form-group-header">
+                <mat-panel-title>
+                    <app-icon *ngIf="icon" [icon]="icon"></app-icon>
+                    <span style="margin: 0 5px;">{{title ? title : 'عنوانی تعریف نشده است'}}</span>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+        <ng-content></ng-content>
+    </mat-expansion-panel>
+</mat-accordion>

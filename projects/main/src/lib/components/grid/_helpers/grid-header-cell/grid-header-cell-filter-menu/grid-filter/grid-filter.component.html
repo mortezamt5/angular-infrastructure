@@ -1,0 +1,124 @@
+<form #form="ngForm">
+  <!--<editor-fold desc="String">-->
+  <div *ngIf="!column.type || column.type === 'STRING'">
+    <mat-select class="filter-select" [(ngModel)]="currentOperator" name="currentOperator"
+                (selectionChange)="handleStringDataChange($event)">
+      <mat-option [value]="operator.key" *ngFor="let operator of stringOperators">
+        {{operator.value}}
+      </mat-option>
+    </mat-select>
+    <input *ngIf="showStringPicker" class="filter-input" type="text" required
+           [(ngModel)]="firstValue" name="firstValue">
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Date">-->
+  <div *ngIf="column.type === 'DATE'">
+    <mat-select class="filter-select" [(ngModel)]="currentOperator" name="currentOperator"
+                (selectionChange)="handleDateDataChange($event)">
+      <mat-option [value]="operator.key" *ngFor="let operator of dateOperators">
+        {{operator.value}}
+      </mat-option>
+    </mat-select>
+    <mat-form-field  *ngIf="showDatePicker && !showBetweenDatePicker && intl === 'en'" appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="firstValue" name="firstValue" required>
+      <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field label=""  *ngIf="showDatePicker && !showBetweenDatePicker && intl === 'fa'" appearance="outline">
+      <mat-label>تاریخ را انتخاب نمایید</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="firstValue" name="firstValue" required>
+      <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field *ngIf="showBetweenDatePicker" appearance="outline">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" name="firstValue" [(ngModel)]="firstValue" required>
+        <input matEndDate placeholder="End date" name="secondValue" [(ngModel)]="secondValue" required>
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Date Time">-->
+  <div *ngIf="column.type === 'DATE_TIME'">
+    <mat-select class="filter-select" [(ngModel)]="currentOperator" name="currentOperator"
+                (selectionChange)="handleDateDataChange($event)">
+      <mat-option [value]="operator.key" *ngFor="let operator of dateOperators">
+        {{operator.value}}
+      </mat-option>
+    </mat-select>
+    <mat-form-field *ngIf="showDatePicker && !showBetweenDatePicker" appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput name="firstValue" [(ngModel)]="firstValue" [matDatepicker]="picker" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field *ngIf="showBetweenDatePicker" appearance="outline">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" name="firstValue" [(ngModel)]="firstValue" required>
+        <input matEndDate placeholder="End date" name="secondValue" [(ngModel)]="secondValue" required>
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <app-grid-time-picker *ngIf="showDatePicker && !showBetweenDatePicker" name="firstTimeValue"
+                         [(ngModel)]="firstTimeValue"></app-grid-time-picker>
+    <div *ngIf="showBetweenDatePicker" class="between-time-picker">
+      <app-grid-time-picker title="From" [(ngModel)]="firstTimeValue" name="firstTimeValue"></app-grid-time-picker>
+      <app-grid-time-picker title="To" [(ngModel)]="secondTimeValue" name="secondTimeValue"></app-grid-time-picker>
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Time">-->
+  <div *ngIf="column.type === 'TIME'">
+    <mat-select class="filter-select" [(ngModel)]="currentOperator" name="currentOperator"
+                (selectionChange)="handleDateDataChange($event)">
+      <mat-option [value]="operator.key" *ngFor="let operator of timeOperators">
+        {{operator.value}}
+      </mat-option>
+    </mat-select>
+    <app-grid-time-picker *ngIf="!showBetweenDatePicker" [(ngModel)]="firstTimeValue" name="firstTimeValue"
+    ></app-grid-time-picker>
+    <div *ngIf="showBetweenDatePicker" class="between-time-picker">
+      <app-grid-time-picker title="From" [(ngModel)]="firstTimeValue" name="firstTimeValue"></app-grid-time-picker>
+      <app-grid-time-picker title="To" [(ngModel)]="secondTimeValue" name="secondTimeValue"></app-grid-time-picker>
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Money || Number">-->
+  <div *ngIf="column.type === 'NUMBER' || column.type === 'MONEY'">
+    <mat-select class="filter-select" [(ngModel)]="currentOperator" name="currentOperator"
+                (selectionChange)="handleNumberDataChange($event)">
+      <mat-option [value]="operator.key" *ngFor="let operator of numberOperators">
+        {{operator.value}}
+      </mat-option>
+    </mat-select>
+
+    <input *ngIf="column.type === 'NUMBER'" class="filter-input" type="text" required
+           [(ngModel)]="firstValue" name="firstValue">
+    <input money *ngIf="column.type === 'MONEY'" class="filter-input" type="text" required
+           [(ngModel)]="firstValue" name="firstValue">
+    <span *ngIf="showBetweenNumber">And</span>
+    <p></p>
+    <input *ngIf="showBetweenNumber && column.type === 'NUMBER'" class="filter-input" type="text" required
+           [(ngModel)]="secondValue" name="secondValue">
+    <input money *ngIf="showBetweenNumber && column.type === 'MONEY'" class="filter-input" type="text" required
+           [(ngModel)]="secondValue" name="secondValue">
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Boolean">-->
+  <div *ngIf="column.type === 'BOOLEAN'">
+    <mat-select class="filter-select" [(ngModel)]="firstValue" name="firstValue">
+      <mat-option [value]="operator" *ngFor="let operator of booleanOperators">
+        {{operator}}
+      </mat-option>
+    </mat-select>
+  </div>
+  <!--</editor-fold>-->
+  <button button  type="submit" class="filter-button filter" [disabled]="form.invalid" (click)="filter()">{{intl === 'en' ? 'Filter' : 'فیلتر'}}</button>
+  <button button  class="filter-button clear" (click)="clear()">{{intl === 'en' ? 'Clear' : 'پاک سازی'}}</button>
+</form>

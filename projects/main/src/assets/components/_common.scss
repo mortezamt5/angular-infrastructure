@@ -1,0 +1,376 @@
+.app-form-button {
+  font-size: 10pt;
+}
+
+.app-form-button i.fa {
+  font-size: 18px;
+  position: relative;
+  top: -1px;
+  left: 5px;
+}
+.app-form-button.success i.fa {
+  color: green;
+}
+
+
+.app-icon-button{
+  background-color: #eaeaea;
+  color: #333;
+  margin: 0 5px;
+  min-width: 35px;
+  padding: 0 8px;
+  line-height: 30px;
+}
+.app-icon-button .app-icon i{
+  font-size: 25px !important;
+}
+
+.app-toolbar-button{
+  background-color: #eaeaea;
+  color: #333;
+  margin: 0 5px;
+  min-width: 35px;
+  padding: 0 8px;
+  line-height: 30px;
+}
+
+
+
+
+.control-loading-lds-ellipsis {
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+
+.control-loading-lds-ellipsis div {
+  position: absolute;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.control-loading-lds-ellipsis div:nth-child(1) {
+  top: 5px;
+  left: 3px;
+  animation: control-loading-lds-ellipsis1 0.5s infinite;
+}
+
+.control-loading-lds-ellipsis div:nth-child(2) {
+  top: 5px;
+  left: 3px;
+  animation: control-loading-lds-ellipsis2 0.5s infinite;
+}
+
+.control-loading-lds-ellipsis div:nth-child(3) {
+  top: 5px;
+  left: 12px;
+  animation: control-loading-lds-ellipsis2 0.5s infinite;
+}
+
+.control-loading-lds-ellipsis div:nth-child(4) {
+  top: 5px;
+  left: 18px;
+  animation: control-loading-lds-ellipsis3 0.5s infinite;
+}
+
+@keyframes control-loading-lds-ellipsis1 {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes control-loading-lds-ellipsis3 {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(0);
+  }
+}
+
+@keyframes control-loading-lds-ellipsis2 {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(10px, 0);
+  }
+}
+
+
+
+
+.app-dialog-container-content {
+  padding: 0 15px 15px 15px !important;
+}
+
+app-dialog-container .mat-dialog-title {
+  background-color: #0B6587;
+  padding: 5px 10px;
+  font-family: iransans;
+  font-weight: normal;
+  font-size: 12pt;
+  color: #fff;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+.mat-dialog-title.danger{
+  background-color: #e74c3c !important;
+}
+.mat-dialog-title.info{
+  background-color: #2980b9 !important;
+}
+.mat-dialog-title.warning{
+  background-color: #e67e22 !important;
+}
+.mat-dialog-title.success{
+  background-color: #27ae60 !important;
+}
+
+
+
+
+app-form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-control-label {
+  margin: 0 0 .2em 0;
+  display: flex;
+  font-size: 9pt;
+}
+
+.errorMessageSign {
+  background-color: #f08b81;
+  height: 2px;
+  width: 100%;
+  margin-top: -2px;
+}
+
+.form-control-subscript {
+  display: block;
+  line-height: 1;
+  height: 1em;
+  margin: 0.26em 0 0.3em 0;
+  font-size: 70%;
+}
+.text-danger{
+  color:#E43724 !important;
+  font-size: 8pt;
+  width: 100%;
+  padding: 0px 5px;
+}
+@keyframes errorTextEnterance {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.form-control-subscript .error-text {
+  display: inline-block;
+  animation: errorTextEnterance .08s;
+}
+
+small {
+  margin: 0;
+}
+.required-symbol{
+  color: #E43724;
+}
+
+
+.app-toolbar-button {
+  color: #7f8c8d !important;
+}
+
+
+
+
+
+.app-grid-loading{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.app-grid-loading .text{
+  margin: 0 auto ;
+}
+.app-grid-loading .lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
+.app-grid-loading .lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #179ECD;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.app.indigo-light .app-grid-loading .lds-ellipsis div {
+  background: #179ECD !important;
+}
+
+.app-grid-loading .lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.app-grid-loading .lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.app-grid-loading .lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.app-grid-loading .lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(24px, 0);
+  }
+}
+
+
+
+.app-panel-header{
+  margin-bottom:15px ;
+}
+.app-panel-header h5{
+  font-size: 12pt;
+}
+
+
+
+
+.app-content-header {
+  color: #fff;
+  text-align: center;
+  padding: 0 10px;
+  min-height: 45px;
+
+  img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 580px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &.bg-image {
+    // background-image: url("../../../../../assets/img/app/header-bg.png");
+    background-blend-mode: overlay;
+    background-size: 300px;
+  }
+}
+
+
+@media screen and (min-width: 960px) {
+  .app-content-header {
+    img {
+      width: 150px;
+      height: 150px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+
+    &.has-bg-image {
+      background-size: 480px;
+    }
+  }
+}
+
+
+
+.app-breadcrumb{
+  font-size: 13px;
+  a{
+      text-decoration: none;
+  }
+  .mat-icon{
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+      padding: 0 6px;
+  }
+  .breadcrumb-title.active{
+      text-transform: uppercase;
+      font-weight: 500;
+  }
+  .breadcrumb-item+.breadcrumb-item:before{
+      display: inline-block;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      content: "/";
+  }
+}
+
+
+mcb-form-action {
+  padding-top: 15px !important;
+}

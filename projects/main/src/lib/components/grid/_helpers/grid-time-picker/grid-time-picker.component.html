@@ -1,0 +1,26 @@
+<div class="grid-time-picker">
+  <div class="title">
+    {{title}}
+  </div>
+  <div class="top">
+    <span class="grid-time-picker-arrows" (click)="plus('hour')">
+      <i class="fa-solid fa-chevron-up"></i></span>
+    <span class="grid-time-picker-arrows" (click)="plus('minute')">
+      <i class="fa-solid fa-chevron-up"></i></span>
+    <span class="grid-time-picker-arrows" (click)="plus('second')">
+      <i class="fa-solid fa-chevron-up"></i></span>
+  </div>
+  <div class="middle">
+    <input type="text" class="hour-time" [(ngModel)]="hour" />
+    <input type="text" class="minute-time" [(ngModel)]="minute" />
+    <input type="text" class="second-time" [(ngModel)]="second" />
+  </div>
+  <div class="button">
+    <span class="grid-time-picker-arrows" (click)="minus('hour')">
+      <i class="fa-solid fa-chevron-down"></i></span>
+    <span class="grid-time-picker-arrows" (click)="minus('minute')">
+      <i class="fa-solid fa-chevron-down"></i></span>
+    <span class="grid-time-picker-arrows" (click)="minus('second')">
+      <i class="fa-solid fa-chevron-down"></i></span>
+  </div>
+</div>

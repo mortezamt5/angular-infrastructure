@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  defaultauth: 'fackbackend',
+  version: '1.0.0',
+  liscence: 'ISC',
+  owner: 'شرکت خدمات انفورماتیک',
+  title: 'بانکداری نوین نسخه شعبه',
+  titleEn: 'Modern Core Banking',
+  branch: false,
+  center: true,
+  firebaseConfig: {
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: '',
+  },
 };
 
 /*

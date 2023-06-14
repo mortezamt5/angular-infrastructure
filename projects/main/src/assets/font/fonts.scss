@@ -1,0 +1,87 @@
+/*<editor-fold desc="###---------- Persian Fonts">*/
+
+@font-face {
+    font-family: IRANSansNum;
+    src: url('IRANSansWeb(FaNum).eot');
+    src: url('IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),
+    url('IRANSansWeb(FaNum).woff') format('woff'),
+    url('IRANSansWeb(FaNum).ttf') format('truetype');
+    font-weight: normal;
+    font-style: all;
+    unicode-range: U+30-39;
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('IRANSansWeb_Bold.woff') format('woff');  /* All Major Browsers */
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('IRANSansWeb_Medium.woff') format('woff');  /* All Major Browsers */
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('IRANSansWeb_Light.woff') format('woff');  /* All Major Browsers */
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('IRANSansWeb_UltraLight.woff') format('woff');  /* All Major Browsers */
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('IRANSansWeb.woff') format('woff');  /* All Major Browsers */
+}
+
+@font-face {
+    font-family: 'BKoodakBold-number';
+    src: url('BKoodakBold.eot');
+    src: url('BKoodakBold.eot?#iefix') format('embedded-opentype'),
+    url('BKoodakBold.woff') format('woff'),
+    url('BKoodakBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+    unicode-range: U+30-39;
+}
+
+@font-face {
+    font-family: Yekan;
+    font-style: normal;
+    src: url('BYEKAN.eot');
+    src: url('BYEKAN.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('BYekan.woff') format('woff2'), /* Chrome36+, Opera24+*/ url('BYekan.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('BYEKAN.TTF') format('truetype');
+}
+
+/*</editor-fold>*/
+mcb-sidenav a, mcb-sidenav h2, mcb-sidenav p,
+mcb-sidenav span, .user-menu a,
+.user-menu span, .user-menu h2,
+.user-menu h3, .user-menu p, .top-contact-form span, .top-contact-form a, top-contact-form p, .ngb-dp-weekday {
+    font-family: Yekan !important;
+}
+
+header span, header h5, mcb-content-header h4, mcb-breadcrumb a, mcb-breadcrumb span, #app-spinner h4, .mat-header-cell,
+mcb-panel a, mcb-panel span, mcb-panel input, .mcb-grid-container a, .mcb-grid-container span,
+mat-table a, mat-table span, mat-table div, mat-paginator a, mat-paginator span, mat-paginator div, .mat-option-text,
+.ngb-dp-day div, .mcb-date-picker-footer button, mcb-form-button span, .menu-title, h5, .mat-select-value, .mcb-textbox , .toast-error span{
+    font-family: BKoodakBold-number, IRANSans !important;
+}
+
+select, select > option {
+    font-family: "B Yekan" !important;
+}
+
+

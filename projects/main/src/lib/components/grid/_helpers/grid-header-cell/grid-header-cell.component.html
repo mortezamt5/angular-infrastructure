@@ -1,0 +1,3 @@
+<span *ngIf="column.titleKey" class="grid-column-title">{{column.titleKey.toString() | translate}}</span>
+<span *ngIf="!column.titleKey" class="grid-column-title">{{column.title}}</span>
+<app-grid-header-cell-filter-menu *ngIf="column.filterable" [intl]="intl" [column]="column"></app-grid-header-cell-filter-menu>

@@ -1,0 +1,16 @@
+{
+  "name": "webui-infrastructure",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/material": "~13.3.9",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
+    "@ngx-translate/core": "^13.0.0",
+    "crypto-js": "^4.1.1",
+    "moment-jalaali": "^0.9.6"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

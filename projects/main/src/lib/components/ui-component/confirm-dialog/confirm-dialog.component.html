@@ -1,0 +1,14 @@
+<app-dialog-container [title]="currentData.title" [color]="currentData.color">
+  <div class="content">
+      {{currentData.message}}
+  </div>
+  <div class="actions">
+      <button *ngFor="let button of currentData.buttons"
+              (click)="button.action()"
+              class="mcb-confirm-dialog-button {{button.color}}" mat-stroked-button>
+          <i class="fa fa-{{button.icon}}"></i>
+          <!-- {{button.titleKey ? (button.titleKey | translator) : button.title }} -->
+          {{button.title}}
+      </button>
+  </div>
+</app-dialog-container>

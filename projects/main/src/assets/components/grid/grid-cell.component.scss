@@ -1,0 +1,17 @@
+.grid-cell {
+  //height: 45px;
+  // display: flex;
+  align-items: center;
+  margin: 0 5px;
+  &.center {
+    justify-content: center;
+  }
+
+  &.left {
+    justify-content: left;
+  }
+
+  &.right {
+    justify-content: right;
+  }
+}

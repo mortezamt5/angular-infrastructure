@@ -1,0 +1,15 @@
+<div class="draArea" cdkDrag cdkDragRootElement=".cdk-overlay-pane"
+     cdkDragBoundary=".cdk-overlay-container">
+    <h5 *ngIf="crudMode" mat-dialog-title cdkDragHandle >
+        <i *ngIf="icon" class="fa fa-{{icon}}"></i>
+        <!-- {{crudMode == 'EDIT' ? ('edit' | translator: 'core') :
+        crudMode == "ADD" ? ('add' | translator: 'core') :
+            ('view' | translator: 'core') }} {{title}} -->
+    </h5>
+    <h5 *ngIf="!crudMode" mat-dialog-title class="{{color}}">
+        {{title}}
+    </h5>
+    <div class="mcb-dialog-container-content">
+        <ng-content></ng-content>
+    </div>
+</div>

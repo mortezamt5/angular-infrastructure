@@ -1,0 +1,10 @@
+<span *ngIf="column.filterable" mat-icon-button class="grid-column-filter">
+  <span id="grid-filter-menu-{{column.field}}" class="grid-filter-menu" #menuTrigger="matMenuTrigger"
+    [matMenuTriggerFor]="menu" (click)="handleFilterClick($event , menuTrigger)">
+    <i class="fa-solid fa-filter icon"></i></span>
+</span>
+<mat-menu #menu="matMenu" class="grid-filter-panel-{{column.field}}">
+  <div class="grid-filter-content" (click)="$event.stopPropagation()">
+    <app-grid-filter [intl]="intl" [column]="column"></app-grid-filter>
+  </div>
+</mat-menu>

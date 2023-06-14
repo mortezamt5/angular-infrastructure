@@ -1,0 +1,49 @@
+<div class="grid-action">
+  <ng-container *ngFor="let action of buttonActions">
+    <ng-container *ngIf="!(action.visible && action.visible(row))">
+      <button [disabled]="action.disable && action.disable(row)" mat-button
+        *ngIf="!action.style || action.style === 'BASIC'" [color]="handleFunctionCall(action.color , row)"
+        (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+      <button [disabled]="action.disable && action.disable(row)" mat-raised-button *ngIf="action.style === 'RAISED'"
+        [color]="handleFunctionCall(action.color , row)" (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+      <button [disabled]="action.disable && action.disable(row)" mat-stroked-button *ngIf="action.style === 'STROKED'"
+        [color]="handleFunctionCall(action.color , row)" (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+      <button [disabled]="action.disable && action.disable(row)" mat-fab *ngIf=" action.style === 'FAB'"
+        [color]="handleFunctionCall(action.color , row)" (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+      <button [disabled]="action.disable && action.disable(row)" mat-mini-fab *ngIf=" action.style === 'MINI_FAB'"
+        [color]="handleFunctionCall(action.color , row)" (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+      <button [disabled]="action.disable && action.disable(row)" mat-flat-button *ngIf=" action.style === 'FLAT'"
+        [color]="handleFunctionCall(action.color , row)" (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+      <button [disabled]="action.disable && action.disable(row)" mat-icon-button *ngIf=" action.style === 'ICON'"
+        [color]="handleFunctionCall(action.color , row)" (click)="action.actionClick && action.actionClick(row)">
+        <app-grid-action-title [action]="action"></app-grid-action-title>
+      </button>
+    </ng-container>
+  </ng-container>
+  <button class="grid-action-menu" *ngIf="menuActions.length > 0" mat-icon-button #actionMenuTrigger="matMenuTrigger"
+    [matMenuTriggerFor]="actionMenu" (click)="handleFilterClick($event , actionMenuTrigger)">
+    <i class="fa-solid fa-ellipsis-vertical icon"></i>
+  </button>
+  <mat-menu #actionMenu="matMenu" class="grid-action-menu-panel">
+    <ng-container *ngFor="let menuAction of menuActions">
+      <button *ngIf="!(menuAction.visible && menuAction.visible(row))"
+        [color]="handleFunctionCall(menuAction.color , row)"
+        (click)="menuAction.actionClick && menuAction.actionClick(row)"
+        [disabled]="menuAction.disable && menuAction.disable(row)" mat-button>
+        <app-grid-action-title [action]="menuAction"></app-grid-action-title>
+      </button>
+    </ng-container>
+  </mat-menu>
+</div>

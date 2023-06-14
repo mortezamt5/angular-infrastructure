@@ -1,0 +1,54 @@
+.grid-header-cell {
+  &.sortable {
+    .grid-column-filter {
+      //top: 0px !important;
+    }
+  }
+}
+
+.grid-column-filter {
+  &:hover {
+    cursor: pointer;
+    color: #595959;
+    transition: 0.3s;
+  }
+}
+
+.grid-filter-menu {
+  background-color: #EDEDED;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #EDEDED;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  .icon {
+    font-size: 14px;
+    position: relative;
+    top: 3px;
+  }
+  &.selected{
+    border-color: blue !important;
+  }
+}
+
+.grid-filter-header {
+  padding: 3px 3px 2px 3px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    font-size: 15px;
+    margin-left: 5px;
+    color: #4E4E4E !important;
+  }
+
+  span {
+    position: relative;
+    top: -4px;
+    color: #4E4E4E;
+  }
+}

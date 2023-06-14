@@ -1,0 +1,15 @@
+<app-content-header
+        [hideBreadcrumb]="hideBreadCrumb"
+        [icon]="contentHeaderIcon"
+        [desc]="contentHeaderDes"
+        [hasBgImage]="true"
+        [class]="'py-3'"></app-content-header>
+<div class="row" style="padding: 15px 25px;">
+    <div class="col-md-12">
+        <div *ngIf="title" class="mcb-panel-header">
+            <h5>{{title}}</h5>
+            <mat-divider></mat-divider>
+        </div>
+        <ng-content></ng-content>
+    </div>
+</div>

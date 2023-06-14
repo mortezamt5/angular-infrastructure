@@ -1,0 +1,9 @@
+app-grid-header-cell{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+}
+.grid-column-title {
+  margin:0 10px;
+}

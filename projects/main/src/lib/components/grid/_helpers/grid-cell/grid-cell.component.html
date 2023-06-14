@@ -1,0 +1,60 @@
+<div class="grid-cell {{column.align ? column.align.toLowerCase() : 'left'}}">
+  <!--<editor-fold desc="String">-->
+  <div *ngIf="!column.type || column.type === 'STRING'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      {{row[column.field]}}
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Date">-->
+  <div *ngIf="column.type === 'DATE'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      {{row[column.field]}}
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Date Time">-->
+  <div *ngIf="column.type === 'DATE_TIME'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      {{row[column.field]}}
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Time">-->
+  <div *ngIf="column.type === 'TIME'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      {{row[column.field]}}
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Number">-->
+  <div *ngIf="column.type === 'NUMBER'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      {{row[column.field]}}
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Money">-->
+  <div *ngIf="column.type === 'MONEY'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      {{row[column.field] | numberSeparator}}
+    </div>
+  </div>
+  <!--</editor-fold>-->
+  <!--<editor-fold desc="Boolean">-->
+  <div *ngIf="column.type === 'BOOLEAN'">
+    <div *ngIf="column.rowTemplate" [innerHTML]="column.rowTemplate(row)"></div>
+    <div *ngIf="!column.rowTemplate">
+      <i class="fa-solid fa-ckeck" *ngIf="row[column.field]"></i>
+      <i class="fa-regular fa-hand-spock" *ngIf="!row[column.field]"></i>
+    </div>
+  </div>
+  <!--</editor-fold>-->
+</div>

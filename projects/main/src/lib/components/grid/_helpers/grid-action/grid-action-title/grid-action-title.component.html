@@ -1,0 +1,5 @@
+<ng-container *ngIf="action">
+  <mat-icon class="grid-action-icon" *ngIf="action.matIcon">{{action.matIcon}}</mat-icon>
+  <i *ngIf="action.fontIcon && !action.matIcon" class="{{action.fontIcon}}"></i>
+  {{action.style!== 'ICON' ? action.text : ''}}
+</ng-container>

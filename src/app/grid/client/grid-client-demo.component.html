@@ -1,0 +1,16 @@
+<h1>Client Mode</h1>
+<app-grid #grid *ngIf="dataSource"
+         [dataSource]="dataSource"
+         [remotePagination]="false"
+         [columns]="columns"
+         [resizable]="true"
+         [rowStyleCondition]="rowStyleCondition"
+         [actions]="actions"
+         [itemPerPage]="[5,20,50,100]"
+         [selectable]="true"
+         (selectChange)="selected($event)"
+         (pageChange)="page($event)"
+         (sortChange)="sort($event)"
+         (rowDoubleClick)="rowDoubleClick($event)"
+         [toolbar]="true"
+></app-grid>

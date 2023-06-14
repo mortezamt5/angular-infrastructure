@@ -1,0 +1,24 @@
+.grid-action {
+  display: flex;
+
+  button {
+    margin: 5px !important;
+  }
+
+  .grid-action-menu {
+    mat-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+.grid-action-menu-panel {
+  padding: 5px;
+
+  div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+

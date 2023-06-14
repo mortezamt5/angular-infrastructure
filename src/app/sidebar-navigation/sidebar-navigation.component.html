@@ -1,0 +1,32 @@
+
+<div class="sidenav" id="mySidenav">
+  <div id="main-container">
+    <div *ngFor="let menu of menuItemsLevel1">
+      <div *ngIf="!menu.parentId" class="sidenavContentHeader"> <i class="icon {{menu.icon}}"></i>{{menu.label}}</div>
+      <a *ngFor="let child of menu.children" (click)="showSubContainer($event , child)">
+        <div *ngIf="child.level === 'L1'" class="sidenavRow" >
+          <i class="icon {{child.icon}}"></i>
+          <div class="title">{{child.label}}</div>
+          <i *ngIf="!child.routeLink" class="fas fa-chevron-left chevron" style="color: #8e9090"></i>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <div id="sub-container">
+    <div id="mainMenu">
+      <div class="title" *ngIf="currentLevel2Parent">
+        <i class="{{currentLevel2Parent.icon}}"></i>
+        {{currentLevel2Parent.label}}
+      </div>
+      <i class="icon fa-solid fa-chevron-left"></i>
+    </div>
+    <div *ngIf="currentLevel2Parent" id="sub-container-content">
+        <a *ngFor="let menu of getLevel2Child()" [routerLink]="menu.routeLink">
+          <div class="sidenavContent">
+            <i class="{{menu.icon}}"></i>
+            {{menu.label}}</div>
+        </a>
+    </div>
+  </div>
+</div>

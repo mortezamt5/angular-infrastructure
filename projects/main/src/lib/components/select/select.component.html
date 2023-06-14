@@ -1,0 +1,36 @@
+<div class="select_area">
+    <mat-select #mcbSelectComponent *ngIf="!_lazy ; else lazyArea" [placeholder]="defaultValue"
+                class="app-select" [required]="required"
+                (selectionChange)="selectionChange($event)" [disabled]="disabled"
+                name="name" [multiple]="multiple"
+                [(value)]="selectedValue">
+        <input *ngIf="filterable" class="app-select-filter-input" type="text" [placeholder]="filterLabel">
+        <mat-option>{{defaultValue}}</mat-option>
+        <mat-option *ngFor="let item of data" [disabled]="item.disabled"
+                    [value]="item[valueField] ? item[valueField] :
+                 item">{{item[textField] ? item[textField] : item}}</mat-option>
+    </mat-select>
+
+    <ng-template #lazyArea>
+        <mat-select #mcbSelectComponent [placeholder]="defaultValue"
+                    class="app-select" (click)="getDataLazy()" [required]="required"
+                    (selectionChange)="selectionChange($event)" [disabled]="disabled"
+                    name="name" [multiple]="multiple"
+                    [(value)]="selectedValue"
+        >
+            <input *ngIf="filterable && !_showSpinner" class="app-select-filter-input" type="text"
+                   [placeholder]="filterLabel">
+            <mat-option class="spinner-area" *ngIf="_data === null || !_data.length" disabled hidden>
+                <div class="container">
+                    <mat-spinner class="spinner" diameter="20"></mat-spinner>
+                    <span>منتظر بمانید</span>
+                </div>
+            </mat-option>
+            <mat-option *ngFor="let item of _data" [disabled]="item.disabled"
+                        [value]="item[valueField]">{{item[textField]}}</mat-option>
+        </mat-select>
+        <div *ngIf="_showSpinner" class="select-placeholder-container">
+            <mat-spinner class="spinner" diameter="20"></mat-spinner>
+        </div>
+    </ng-template>
+</div>

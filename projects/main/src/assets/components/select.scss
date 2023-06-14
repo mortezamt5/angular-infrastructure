@@ -1,0 +1,47 @@
+.app-select {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 5px;
+  position: relative;
+  top: 0;
+  font-size: 10pt;
+}
+
+.mat-select.mat-select-disabled {
+  background-color: #eee;
+}
+
+.select_area {
+  height: 36px;
+}
+
+.select-placeholder-container {
+  position: relative;
+  top: -25px;
+  direction: ltr;
+  left: 5px;
+}
+
+.spinner-area .container {
+  display: flex;
+  flex-direction: row;
+  width: 125px;
+  margin: 0;
+}
+
+.spinner-area .container mat-spinner {
+  top: 10px;
+  left: 15px;
+}
+
+.app-select.ng-invalid{
+  border-right: 2px solid #e74c3c !important;
+  border-color: #f08b81 !important;
+}
+.app-select-filter-input{
+  width: 90%;
+  margin: 10px 11px;
+  border:1px solid #ccc;
+  padding: 4px 10px;
+  border-radius: 2px;
+}

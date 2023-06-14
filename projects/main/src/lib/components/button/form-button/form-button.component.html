@@ -1,0 +1,6 @@
+<button *ngIf="!isViewMode" [type]="type"
+        class="app-form-button {{color}}" mat-stroked-button [disabled]="disabled">
+    <i *ngIf="icon" [class]="'fa fa-' + icon"></i>
+    <span><ng-content></ng-content></span>
+</button>
+<a *ngIf="cancelButton" class="app-form-button-cancel" (click)="cancelClick()">انصراف</a>

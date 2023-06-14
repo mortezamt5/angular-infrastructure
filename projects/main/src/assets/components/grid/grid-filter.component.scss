@@ -1,0 +1,79 @@
+.grid-filter-content{
+  padding: 10px;
+  // div:first-child {
+  //   padding: 10px;
+  //   display: flex;
+  //   flex-direction: column;
+
+
+  // }
+  .filter-select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .filter-input {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    outline: none;
+    border-radius: 3px;
+  }
+
+  .filter-button {
+    border: unset;
+    padding: 5px 10px !important;
+    margin: 0 10px;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: none;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &.filter {
+      background-color: #1976d2;
+
+      &:hover {
+        background-color: #1669BB;
+      }
+    }
+
+    &.clear {
+      background-color: #FF991E;
+      margin-left: 0px !important;
+
+      &:hover {
+        background-color: #FF8D04;
+      }
+    }
+
+    &:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+      &:hover{
+        background-color: #D0D0D0;
+      }
+    }
+  }
+
+  .time-range-picker {
+    .mat-form-field-infix {
+      display: flex !important;
+    }
+
+    input {
+    }
+  }
+
+  .between-time-picker {
+    display: flex;
+    justify-content: center;
+
+    app-grid-time-picker {
+      margin-right: 5px;
+    }
+  }
+}
